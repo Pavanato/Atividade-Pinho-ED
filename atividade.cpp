@@ -8,7 +8,8 @@ using std::string;
 
 // Protótipos das funções
 
-void valorAbs(int &irefNumero);
+void valorAbs(int& irefNumero);
+int iFatorial(int iNumero);
 
 int main() 
 {
@@ -32,6 +33,17 @@ int main()
 
   cout << "=======================================" << endl;
 
+  cout << "Teste de fatorial: " << endl;
+
+  int fatorial_10 = iFatorial(10);
+
+  cout << "Fatorial de 10: " << fatorial_10 << endl;
+
+  int fatorial_0 = iFatorial(0);
+
+  cout << "Fatorial de 0: " << fatorial_0 << endl;
+
+  cout << "=======================================" << endl;
 
   return 0;
 }
@@ -44,4 +56,16 @@ void valorAbs(int &irefNumero) {
   if (irefNumero < 0) {
     irefNumero = -irefNumero;
   }
+}
+
+// Fatorial Iterativo
+
+int iFatorial(int iNumero) {
+  int iFatorial = 1;
+
+  for (int i = 1; i <= iNumero; i++) {
+    iFatorial *= i;
+  }
+
+  return iFatorial;
 }
