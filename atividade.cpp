@@ -12,6 +12,7 @@ void valorAbs(int& irefNumero);
 int iFatorial(int iNumero);
 int iProgressaoAritmetica(int iValorInicial, int iRazao, int iTermos);
 int iFibonacci(int iNumero);
+int iNumeroDigitos(int iNumero);
 
 int main() 
 {
@@ -75,6 +76,22 @@ int main()
 
   cout << "=======================================" << endl;
 
+  cout << "Teste de número de dígitos: " << endl;
+
+  int numeroDigitos_10 = iNumeroDigitos(10);
+
+  cout << "Número de dígitos de 10: " << numeroDigitos_10 << endl;
+
+  int numeroDigitos_314 = iNumeroDigitos(314);
+
+  cout << "Número de dígitos de 314: " << numeroDigitos_314 << endl;
+
+  int numeroDigitos_n17 = iNumeroDigitos(-17);
+
+  cout << "Número de dígitos de -17: " << numeroDigitos_n17 << endl;
+
+
+
   return 0;
 }
 
@@ -120,4 +137,19 @@ int iFibonacci(int iNumero) {
   }
 
   return iFibonacci;
+}
+
+// Calculo do numero de digitos de um inteiro (pode ser negativo tbm)
+
+int iNumeroDigitos(int iNumero) {
+  int iDigitos = 1;
+
+  while (iNumero >= 10 || iNumero <= -10)
+  {
+    iNumero = iNumero / 10;
+    // cout << iNumero << endl;
+    iDigitos++;
+  }
+
+  return iDigitos;
 }
