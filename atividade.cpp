@@ -11,6 +11,7 @@ using std::string;
 void valorAbs(int& irefNumero);
 int iFatorial(int iNumero);
 int iProgressaoAritmetica(int iValorInicial, int iRazao, int iTermos);
+int iFibonacci(int iNumero);
 
 int main() 
 {
@@ -62,6 +63,18 @@ int main()
 
   cout << "=======================================" << endl;
 
+  cout << "Teste de Fibonacci: " << endl;
+
+  int fibonacci_10 = iFibonacci(10);
+
+  cout << "Décimo termo de Fibonacci: " << fibonacci_10 << endl;
+
+  int fibonacci_4 = iFibonacci(4);
+
+  cout << "Quarto termo de Fibonacci: " << fibonacci_4 << endl;
+
+  cout << "=======================================" << endl;
+
   return 0;
 }
 
@@ -91,4 +104,20 @@ int iFatorial(int iNumero) {
 
 int iProgressaoAritmetica(int iValorInicial, int iRazao, int iTermos) {
   return iValorInicial + (iTermos - 1) * iRazao;
+}
+
+// Fibonacci Iterativo
+
+int iFibonacci(int iNumero) {
+  int iFibonacci = 0;
+  int iFibonacciAnterior = 1;
+  int iFibonacciAnterior2 = 0;
+
+  for (int i = 1; i < iNumero; i++) {
+    iFibonacci = iFibonacciAnterior + iFibonacciAnterior2;
+    iFibonacciAnterior2 = iFibonacciAnterior;
+    iFibonacciAnterior = iFibonacci;
+  }
+
+  return iFibonacci;
 }
