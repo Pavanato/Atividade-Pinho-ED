@@ -10,6 +10,7 @@ using std::string;
 
 void valorAbs(int& irefNumero);
 int iFatorial(int iNumero);
+int iProgressaoAritmetica(int iValorInicial, int iRazao, int iTermos);
 
 int main() 
 {
@@ -45,6 +46,22 @@ int main()
 
   cout << "=======================================" << endl;
 
+  cout << "Teste de progressão aritmética: " << endl;
+
+  int valorInicial = 1;
+  int razao = 2;
+  int termos = 5;
+
+  cout << "Valor inicial: " << valorInicial << endl;
+  cout << "Razão: " << razao << endl;
+  cout << "Termos: " << termos << endl;
+
+  int resultado = iProgressaoAritmetica(valorInicial, razao, termos);
+
+  cout << "Resultado: " << resultado << endl;
+
+  cout << "=======================================" << endl;
+
   return 0;
 }
 
@@ -68,4 +85,10 @@ int iFatorial(int iNumero) {
   }
 
   return iFatorial;
+}
+
+// Progressão Aritmética
+
+int iProgressaoAritmetica(int iValorInicial, int iRazao, int iTermos) {
+  return iValorInicial + (iTermos - 1) * iRazao;
 }
